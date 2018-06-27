@@ -25,3 +25,7 @@ font-family: 'Roboto Mono', monospace;
 #title {
     font-family: 'Shrikhand', cursive;
 }
+
+#errorArea {
+    color: red;
+}
