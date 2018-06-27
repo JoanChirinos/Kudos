@@ -1,0 +1,27 @@
+/*
+FONTS
+
+font-family: 'Shrikhand', cursive;
+font-family: 'Roboto Mono', monospace;
+
+*/
+
+.sm-space {
+    height: 10px;
+}
+
+.md-space {
+    height: 20px;
+}
+
+.lg-space {
+    height: 30px;
+}
+
+.block {
+    font-family: 'Roboto Mono', monospace;
+}
+
+#title {
+    font-family: 'Shrikhand', cursive;
+}
