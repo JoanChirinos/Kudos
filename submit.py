@@ -14,5 +14,5 @@ def go():
     f.close()
     
     x = open('kudos.txt', 'w+')
-    x.write(t.strip() + '\n' + toWho + ',' + forWhy)
+    x.write(t.strip() + '\n' + toWho.capitalize() + ',' + forWhy.lowercase())
     x.close()

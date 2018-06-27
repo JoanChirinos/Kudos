@@ -1,6 +1,11 @@
 var textArea = document.getElementById("textArea");
 var errorArea = document.getElementById("errorArea");
 
+var sub = new XMLHttpRequest;
+sub.onload = function () {
+    console.log("should've writted");
+}
+
 function displaySubmit() {
 
     console.log("clicked \"Submit Kudos\"")
@@ -30,10 +35,8 @@ function submitKudos(form) {
     }
     /*else submit form */
     else {
-
-        var sub = new XMLHttpRequest;
         console.log("http://homer.stuy.edu/~jchirinos/Kudos/submit.py?toWho=" + encodeURIComponent(toWho) + "?whatItSays=" + encodeURIComponent(whatItSays));
-        sub.open("GET", "http://homer.stuy.edu/~jchirinos/Kudos/submit.py?toWho=" + encodeURIComponent(toWho) + "&whatItSays=" + encodeURIComponent(whatItSays));
+        sub.send("GET", "http://homer.stuy.edu/~jchirinos/Kudos/submit.py?toWho=" + encodeURIComponent(toWho) + "&whatItSays=" + encodeURIComponent(whatItSays));
         textArea.innerHTML = "Thank!!!"
 
     }
