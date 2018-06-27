@@ -34,6 +34,7 @@ function submitKudos(form) {
         var sub = new XMLHttpRequest;
         console.log("http://homer.stuy.edu/~jchirinos/Kudos/submit.py?toWho=" + encodeURIComponent(toWho) + "?whatItSays=" + encodeURIComponent(whatItSays));
         sub.open("GET", "http://homer.stuy.edu/~jchirinos/Kudos/submit.py?toWho=" + encodeURIComponent(toWho) + "&whatItSays=" + encodeURIComponent(whatItSays));
+        textArea.innerHTML = "Thank!!!"
 
     }
 
