@@ -25,7 +25,7 @@ def go():
         t = f.read()
         f.close()
         
-        if len(t.strip() == 0):
+        if len(t.strip()) == 0:
             print '<div class="md-space"></div><div class="row"><div class="col text-center" style="color: red">No Kudos have been submitted yet!</div></div>'
         
         kl = t.split('\n')
