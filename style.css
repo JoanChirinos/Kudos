@@ -33,3 +33,7 @@ body {
 #errorArea {
     color: red;
 }
+
+ul {
+    list-style-position: inside;
+}
