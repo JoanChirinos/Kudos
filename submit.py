@@ -38,9 +38,9 @@ def go():
         
         for i in kl:
             if i[0] in d:
-                d[i[0]] += [d[i[1]]]
+                d[i[0]] += [i[1]]
             else:
-                d[i[0]] = [d[i[1]]]
+                d[i[0]] = [i[1]]
         
         print '<div class="row"><div class="col-3"><div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">'
         
