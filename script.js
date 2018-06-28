@@ -27,7 +27,7 @@ function loadSubmissions() {
     textArea.innerHTML = "";
     errorArea.innerHTML = "";
     console.log("starting to load submissions");
-    seeSubs.open("GET", "https://homer.stuy.edu/~jchirinos/Kudos/submit.py?sort=none")
+    seeSubs.open("GET", "http://homer.stuy.edu/~jchirinos/Kudos/submit.py?sort=none")
     seeSubs.send()
     textArea.innerHTML = '<div class="row"><div class="col text-center">Loading...</div></div>'
 }
