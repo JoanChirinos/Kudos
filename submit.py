@@ -26,7 +26,7 @@ def go():
         f.close()
         
         kl = t.split('\n')
-        for i in kl:
+        for i in range(len(kl)):
             kl[i] = kl[i].split(',')
         
         d = dict()
