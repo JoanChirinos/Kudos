@@ -17,15 +17,15 @@ def go():
         f.close()
 
         x = open('kudos.txt', 'w+')
-        x.write(t.strip() + '\n' + toWho.capitalize() + ',' + forWhy.lower())
+        x.write(t.strip(' ') + '\n' + toWho.strip(' ').capitalize() + ',' + forWhy.strip(' ').lower())
         x.close()
-        print t.strip() + '\n' + toWho.capitalize() + ',' + forWhy.lower()
+        print t.strip(' ') + '\n' + toWho.strip(' ').capitalize() + ',' + forWhy.lower()
     else:
         f = open('kudos.txt', 'rU')
         t = f.read()
         f.close()
         
-        if len(t.strip()) == 0:
+        if len(t.strip(' ')) == 0:
             print '</div><div class="row"><div class="col text-center" style="color: red">No Kudos have been submitted yet!</div></div>'
             return
         
@@ -62,17 +62,17 @@ def go():
         for i in sorted(d.keys()):
             print "\n\n<!-- " + str(i) + "  |  " + str(d[i]) + " -->"
             if not hasAddedOne:
-                toAddLeft += "\n" + leftACTIVE.replace('NAME', i.strip())
-                temp = rightACTIVE.replace('NAME', i.strip())
+                toAddLeft += "\n" + leftACTIVE.replace('NAME', i.strip(' '))
+                temp = rightACTIVE.replace('NAME', i.strip(' '))
                 hasAddedOne = True
             else:
-                toAddLeft += "\n" + left.replace('NAME', i.strip())
-                temp = right.replace('NAME', i.strip())
+                toAddLeft += "\n" + left.replace('NAME', i.strip(' '))
+                temp = right.replace('NAME', i.strip(' '))
             kudos = ""
             for x in d[i]:
                 if x.split(' ')[0].lower() == 'for':
                     x = ' '.join(x.split(' ')[1:])
-                kudos += '<li>Kudos to ' + i.strip() + ' for ' + x.strip() + '</li>'
+                kudos += '<li>Kudos to ' + i.strip(' ') + ' for ' + x.strip(' ') + '</li>'
             toReplaceWith = '<ul>' + kudos + '</ul>'
             temp = temp.replace('KUDOS', toReplaceWith)
             toAddRight += temp
