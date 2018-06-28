@@ -25,11 +25,10 @@ def go():
         t = f.read()
         f.close()
         
-        kl = t.split('\n')
+        if len(t.strip() == 0):
+            print '<div class="md-space"></div><div class="row"><div class="col text-center" style="color: red">No Kudos have been submitted yet!</div></div>'
         
-        if len(kl) == 0:
-            print "No kudos yet!"
-            return
+        kl = t.split('\n')
         
         for i in range(len(kl)):
             kl[i] = kl[i].split(',')
