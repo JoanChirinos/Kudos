@@ -35,7 +35,7 @@ function loadSubmissions() {
 function displaySubmissions() {
     console.log("displaying submittions:");
     console.log(seeSubs.responseText);
-    textArea = seeSubs.responseText;
+    textArea.innerHTML = seeSubs.responseText;
 }
 
 function submitKudos(form) {
