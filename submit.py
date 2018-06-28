@@ -44,16 +44,25 @@ def go():
         
         print '<div class="row"><div class="col-3"><div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">'
         
-        left = '<a class="nav-link active" id="v-pills-NAME-tab" data-toggle="pill" href="#v-pills-NAME" role="tab" aria-controls="v-pills-NAME" aria-selected="true">NAME</a>'
+        leftACTIVE = '<a class="nav-link active" id="v-pills-NAME-tab" data-toggle="pill" href="#v-pills-NAME" role="tab" aria-controls="v-pills-NAME" aria-selected="true">NAME</a>'
+        rightACTIVE = '<div class="tab-pane fade show active" id="v-pills-NAME" role="tabpanel" aria-labelledby="v-pills-NAME-tab">KUDOS</div>'
+        left = '<a class="nav-link" id="v-pills-NAME-tab" data-toggle="pill" href="#v-pills-NAME" role="tab" aria-controls="v-pills-NAME" aria-selected="true">NAME</a>'
         right = '<div class="tab-pane fade show active" id="v-pills-NAME" role="tabpanel" aria-labelledby="v-pills-NAME-tab">KUDOS</div>'
         
         toAddLeft = ""
         toAddRight = ""
         
+        hasAddedOne = False
+        
         for i in d.keys():
             print "\n\n<!-- " + str(i) + "  |  " + str(d[i]) + " -->"
-            toAddLeft += "\n" + left.replace('NAME', i)
-            temp = right.replace('NAME', i)
+            if not hasAddedOne:
+                toAddLeft += "\n" + leftACTIVE.replace('NAME', i)
+                temp = rightACTIVE.replace('NAME', i)
+                hasAddedOne = True
+            else:
+                toAddLeft += "\n" + left.replace('NAME', i)
+                temp = right.replace('NAME', i)
             kudos = ""
             for x in d[i]:
                 kudos += '<li>Kudos to ' + i + ' for ' + x
