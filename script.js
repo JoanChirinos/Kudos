@@ -46,14 +46,14 @@ function submitKudos(form) {
     var whatItSays = form.whatItSays.value;
     /*if either field is not complete*/
     if (toWho == "" || whatItSays == "") {
-        errorArea.innerHTML = "Please fill out both fields";
+        errorArea.innerHTML = '<div class="row"><div class="col text-center">Please fill out both fields</div></div>';
     }
     /*else submit form */
     else {
         console.log("http://homer.stuy.edu/~jchirinos/Kudos/submit.py?toWho=" + encodeURIComponent(toWho) + "&whatItSays=" + encodeURIComponent(whatItSays));
         sub.open("GET", "http://homer.stuy.edu/~jchirinos/Kudos/submit.py?toWho=" + encodeURIComponent(toWho) + "&whatItSays=" + encodeURIComponent(whatItSays));
         sub.send();
-        textArea.innerHTML = "Thank!!!";
+        textArea.innerHTML = '<div class="row"><div class="col text-center">Thank!!!</div></div>';
 
     }
 

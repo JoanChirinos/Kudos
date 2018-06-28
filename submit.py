@@ -70,6 +70,8 @@ def go():
                 temp = right.replace('NAME', i)
             kudos = ""
             for x in d[i]:
+                if x.split(' ')[0].lower() == 'for':
+                    x = ' '.join(x.split(' ')[1:])
                 kudos += '<li>Kudos to ' + i + ' for ' + x
             toReplaceWith = '<ul>' + kudos + '</ul>'
             temp = temp.replace('KUDOS', toReplaceWith)
