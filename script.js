@@ -11,7 +11,7 @@ function displaySubmit() {
     console.log("clicked \"Submit Kudos\"")
     textArea.innerHTML = "";
     errorArea.innerHTML = "";
-    textArea.innerHTML = '<form name="submissionForm"><div class="form-group"><label for="toWho">Kudos to...</label><input type="text" class="form-control" id="toWho" name="toWho" placeholder="Enter name"></div><div class="form-group"><label for="whatItSays">for...</label><input type="text" class="form-control" placeholder="For Why?" name="whatItSays" id="whatItSays"></div><button type="button" class="btn btn-lg btn-success btn-block" onclick="submitKudos(this.form);">Submit</button></form>';
+    textArea.innerHTML = '<form name="submissionForm"><div class="form-group"><label for="toWho">Kudos to...</label><input autocomplete="off" type="text" class="form-control" id="toWho" name="toWho" placeholder="Enter name"></div><div class="form-group"><label for="whatItSays">for...</label><input autocomplete="off" type="text" class="form-control" placeholder="For Why?" name="whatItSays" id="whatItSays"></div><button type="button" class="btn btn-lg btn-success btn-block" onclick="submitKudos(this.form);">Submit</button></form>';
 
 }
 
