@@ -1,0 +1,98 @@
+#! /usr/bin/python
+
+import cgi, cgitb
+
+cgitb.enable()
+
+print 'Content-type: text/html\n\n'
+
+def go():
+    fs = cgi.FieldStorage()
+    if len(fs.keys()) > 1:
+        toWho = fs.getvalue('toWho')
+        forWhy = fs.getvalue('whatItSays')
+
+        f = open('kudos.txt', 'rU')
+        t = f.read()
+        f.close()
+
+        x = open('kudos.txt', 'w+')
+        x.write(t.strip(' ') + '\n' + toWho.strip(' ').capitalize() + ',' + forWhy.strip(' ').lower())
+        x.close()
+        print t.strip(' ') + '\n' + toWho.strip(' ').capitalize() + ',' + forWhy.lower()
+    else:
+        f = open('kudos.txt', 'rU')
+        t = f.read()
+        f.close()
+        
+        if len(t.strip(' ')) == 0:
+            print '</div><div class="row"><div class="col text-center" style="color: red">No Kudos have been submitted yet!</div></div>'
+            return
+        
+        kl = t.split('\n')
+        
+        for i in range(len(kl)):
+            kl[i] = kl[i].split(',')
+        while kl[0] == [""]:
+            kl = kl[1:]
+            
+        while kl[-1] == [""]:
+            kl = kl[:-1]
+        
+        d = dict()
+        
+        for i in kl:
+            if i[0].capitalize() in d:
+                d[i[0].capitalize()] += [i[1]]
+            else:
+                d[i[0].capitalize()] = [i[1]]
+        
+        print '<div class="row"><div class="col-sm-4"><div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">'
+        
+        leftACTIVE = '<a class="nav-link active" id="v-pills-NAME-tab" data-toggle="pill" href="#v-pills-NAME" role="tab" aria-controls="v-pills-NAME" aria-selected="true">NAME</a>'
+        rightACTIVE = '<div class="tab-pane fade show active" id="v-pills-NAME" role="tabpanel" aria-labelledby="v-pills-NAME-tab">KUDOS</div>'
+        left = '<a class="nav-link" id="v-pills-NAME-tab" data-toggle="pill" href="#v-pills-NAME" role="tab" aria-controls="v-pills-NAME" aria-selected="true">NAME</a>'
+        right = '<div class="tab-pane fade" id="v-pills-NAME" role="tabpanel" aria-labelledby="v-pills-NAME-tab">KUDOS</div>'
+        
+        toAddLeft = ""
+        toAddRight = ""
+        
+        hasAddedOne = False
+        
+        for i in sorted(d.keys()):
+            print "\n\n<!-- " + str(i) + "  |  " + str(d[i]) + " -->"
+            if not hasAddedOne:
+                toAddLeft += "\n" + leftACTIVE.replace('NAME', i.strip(' '))
+                temp = rightACTIVE.replace('NAME', i.strip(' '))
+                hasAddedOne = True
+            else:
+                toAddLeft += "\n" + left.replace('NAME', i.strip(' '))
+                temp = right.replace('NAME', i.strip(' '))
+            kudos = ""
+            for x in d[i]:
+                if x.split(' ')[0].lower() == 'for':
+                    x = ' '.join(x.split(' ')[1:])
+                kudos += '<li>Kudos to ' + i.strip(' ') + ' for ' + x.strip(' ') + '</li>'
+            toReplaceWith = '<ul>' + kudos + '</ul>'
+            temp = temp.replace('KUDOS', toReplaceWith)
+            toAddRight += temp
+        
+        print toAddLeft
+        print '\n\n\n</div></div><div class="col-sm-8"><div class="tab-content" id="v-pills-tabContent">'
+        print toAddRight
+        print '\n\n\n</div></div></div></div>'
+        print '\n<div class="md-space"></div>'
+        print '\n\n<!-- this should only show on small screens -->\n\n<div class="row"><div class="col d-sm-block d-md-none d-lg-none d-xl-non"><a href="#" class="btn btn-block btn-info">Back to top</a></div></div>'
+    
+go()
+
+
+
+
+
+
+
+
+
+
+
