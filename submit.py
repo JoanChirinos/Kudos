@@ -42,6 +42,7 @@ def go():
         d = dict()
         
         for i in kl:
+            i = i.capitalize()
             if i[0] in d:
                 d[i[0]] += [i[1]]
             else:
@@ -60,7 +61,6 @@ def go():
         hasAddedOne = False
         
         for i in sorted(d.keys()):
-            i = i.capitalize()
             print "\n\n<!-- " + str(i) + "  |  " + str(d[i]) + " -->"
             if not hasAddedOne:
                 toAddLeft += "\n" + leftACTIVE.replace('NAME', i.strip())
