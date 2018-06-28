@@ -35,7 +35,7 @@ function submitKudos(form) {
     }
     /*else submit form */
     else {
-        console.log("http://homer.stuy.edu/~jchirinos/Kudos/submit.py?toWho=" + encodeURIComponent(toWho) + "?whatItSays=" + encodeURIComponent(whatItSays));
+        console.log("http://homer.stuy.edu/~jchirinos/Kudos/submit.py?toWho=" + encodeURIComponent(toWho) + "&whatItSays=" + encodeURIComponent(whatItSays));
         sub.open("GET", "http://homer.stuy.edu/~jchirinos/Kudos/submit.py?toWho=" + encodeURIComponent(toWho) + "&whatItSays=" + encodeURIComponent(whatItSays));
         sub.send();
         textArea.innerHTML = "Thank!!!"
