@@ -26,11 +26,12 @@ def go():
         f.close()
         
         kl = t.split('\n')
-        kdl = [i.split(',') for i in kl]
+        for i in kl:
+            kl[i] = kl[i].split(',')
         
         d = dict()
         
-        for i in kdl:
+        for i in kl:
             if i[0] in d:
                 d[i[0]] += [d[i[1]]]
             else:
