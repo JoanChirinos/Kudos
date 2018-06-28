@@ -54,7 +54,7 @@ def go():
         
         hasAddedOne = False
         
-        for i in d.keys():
+        for i in sorted(d.keys()):
             print "\n\n<!-- " + str(i) + "  |  " + str(d[i]) + " -->"
             if not hasAddedOne:
                 toAddLeft += "\n" + leftACTIVE.replace('NAME', i)
