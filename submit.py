@@ -18,6 +18,8 @@ def go():
     x = open('kudos.txt', 'w+')
     x.write(t.strip() + '\n' + toWho.capitalize() + ',' + forWhy.lowercase())
     x.close()
+    
+    
     print t.strip() + '\n' + toWho.capitalize() + ',' + forWhy.lower()
     
 go()
