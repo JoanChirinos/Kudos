@@ -6,21 +6,35 @@ sub.onload = function () {
     console.log("should've written");
 }
 
+var seeSubs = new XMLHttpRequest;
+seeSubs.onload = function () {
+    console.log("finished loading submissions. should display now");
+    displaySubmissions();
+}
+
 function displaySubmit() {
 
     console.log("clicked \"Submit Kudos\"")
     textArea.innerHTML = "";
     errorArea.innerHTML = "";
-    textArea.innerHTML = '<form name="submissionForm"><div class="form-group"><label for="toWho">Kudos to...</label><input autocomplete="off" type="text" class="form-control" id="toWho" name="toWho" placeholder="Enter name"></div><div class="form-group"><label for="whatItSays">for...</label><input autocomplete="off" type="text" class="form-control" placeholder="For Why?" name="whatItSays" id="whatItSays"></div><button type="button" class="btn btn-lg btn-success btn-block" onclick="submitKudos(this.form);">Submit</button></form>';
+    textArea.innerHTML = '<div class="row"><div class="col"><form name="submissionForm"><div class="form-group"><label for="toWho">Kudos to...</label><input autocomplete="off" type="text" class="form-control" id="toWho" name="toWho" placeholder="Enter name"></div><div class="form-group"><label for="whatItSays">for...</label><input autocomplete="off" type="text" class="form-control" placeholder="For Why?" name="whatItSays" id="whatItSays"></div><button type="button" class="btn btn-lg btn-success btn-block" onclick="submitKudos(this.form);">Submit</button></form></div></div>';
 
 }
 
-function displayView() {
+function loadSubmissions() {
 
     console.log("clicked \"View Kudos\"");
     textArea.innerHTML = "";
     errorArea.innerHTML = "";
+    console.log("starting to load submissions");
+    seeSubs.open("GET", "https://homer.stuy.edu/~jchirinos/Kudos/submit.py?sort=none")
+    seeSubs.send()
+    textArea.innerHTML = '<div class="row"><div class="col text-center">Loading...</div></div>'
+}
 
+function displaySubmissions() {
+    console.log("displaying submittions")
+    textArea = seeSubs.responseText;
 }
 
 function submitKudos(form) {
