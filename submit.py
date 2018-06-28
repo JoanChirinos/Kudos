@@ -26,6 +26,11 @@ def go():
         f.close()
         
         kl = t.split('\n')
+        
+        if len(kl) == 0:
+            print "No kudos yet!"
+            return
+        
         for i in range(len(kl)):
             kl[i] = kl[i].split(',')
         while kl[0] == [""]:
