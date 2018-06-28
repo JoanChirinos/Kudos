@@ -27,13 +27,14 @@ function loadSubmissions() {
     textArea.innerHTML = "";
     errorArea.innerHTML = "";
     console.log("starting to load submissions");
-    seeSubs.open("GET", "http://homer.stuy.edu/~jchirinos/Kudos/submit.py?sort=none")
-    seeSubs.send()
-    textArea.innerHTML = '<div class="row"><div class="col text-center">Loading...</div></div>'
+    seeSubs.open("GET", "http://homer.stuy.edu/~jchirinos/Kudos/submit.py?sort=none");
+    seeSubs.send();
+    textArea.innerHTML = '<div class="row"><div class="col text-center">Loading...</div></div>';
 }
 
 function displaySubmissions() {
-    console.log("displaying submittions")
+    console.log("displaying submittions:");
+    console.log(seeSubs.responseText);
     textArea = seeSubs.responseText;
 }
 
@@ -52,7 +53,7 @@ function submitKudos(form) {
         console.log("http://homer.stuy.edu/~jchirinos/Kudos/submit.py?toWho=" + encodeURIComponent(toWho) + "&whatItSays=" + encodeURIComponent(whatItSays));
         sub.open("GET", "http://homer.stuy.edu/~jchirinos/Kudos/submit.py?toWho=" + encodeURIComponent(toWho) + "&whatItSays=" + encodeURIComponent(whatItSays));
         sub.send();
-        textArea.innerHTML = "Thank!!!"
+        textArea.innerHTML = "Thank!!!";
 
     }
 
