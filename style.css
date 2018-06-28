@@ -6,6 +6,10 @@ font-family: 'Roboto Mono', monospace;
 
 */
 
+body {
+    background-image: url(imgs/sun-pattern/sun-pattern.png);
+}
+
 .sm-space {
     height: 10px;
 }
