@@ -3,7 +3,7 @@ var errorArea = document.getElementById("errorArea");
 
 var sub = new XMLHttpRequest;
 sub.onload = function () {
-    console.log("should've writted");
+    console.log("should've written");
 }
 
 function displaySubmit() {

@@ -4,6 +4,8 @@ import cgi, cgitb
 
 cgitb.enable()
 
+print 'Content-type: text/html\n\n'
+
 def go():
     fs = cgi.FieldStorage()
     toWho = fs.getvalue('toWho')
@@ -16,3 +18,5 @@ def go():
     x = open('kudos.txt', 'w+')
     x.write(t.strip() + '\n' + toWho.capitalize() + ',' + forWhy.lowercase())
     x.close()
+    
+go()
