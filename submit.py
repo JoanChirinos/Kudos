@@ -52,7 +52,7 @@ def go():
         leftACTIVE = '<a class="nav-link active" id="v-pills-NAME-tab" data-toggle="pill" href="#v-pills-NAME" role="tab" aria-controls="v-pills-NAME" aria-selected="true">NAME</a>'
         rightACTIVE = '<div class="tab-pane fade show active" id="v-pills-NAME" role="tabpanel" aria-labelledby="v-pills-NAME-tab">KUDOS</div>'
         left = '<a class="nav-link" id="v-pills-NAME-tab" data-toggle="pill" href="#v-pills-NAME" role="tab" aria-controls="v-pills-NAME" aria-selected="true">NAME</a>'
-        right = '<div class="tab-pane fade show active" id="v-pills-NAME" role="tabpanel" aria-labelledby="v-pills-NAME-tab">KUDOS</div>'
+        right = '<div class="tab-pane fade" id="v-pills-NAME" role="tabpanel" aria-labelledby="v-pills-NAME-tab">KUDOS</div>'
         
         toAddLeft = ""
         toAddRight = ""
