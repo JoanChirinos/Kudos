@@ -8,7 +8,7 @@ print 'Content-type: text/html\n\n'
 
 def go():
     fs = cgi.FieldStorage()
-    if len(fs.keys() > 1):
+    if len(fs.keys()) > 1:
         toWho = fs.getvalue('toWho')
         forWhy = fs.getvalue('whatItSays')
 
