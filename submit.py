@@ -80,6 +80,8 @@ def go():
         print toAddRight
         print '\n\n\n</div></div></div></div>'
         print '\n\n<!-- this should only show on small screens -->\n\n<div class="row"><div class"col hidden-lg hidden-md visible-sm"><a href="#" class="btn btn-block btn-info">Back to top</a></div></div>'
+        for i in range(100):
+            print '<br>'
                 
     
 go()
