@@ -51,17 +51,18 @@ def go():
         toAddRight = ""
         
         for i in d.keys():
-            print "<!-- " + str(i) + "  |  " + str(d[i]) + " -->"
-            toAddLeft += "\n\n" + left.replace('NAME', i)
+            print "\n\n<!-- " + str(i) + "  |  " + str(d[i]) + " -->"
+            toAddLeft += "\n" + left.replace('NAME', i)
             temp = toAddRight.replace('NAME', i)
             kudos = ""
             for x in d[i]:
                 kudos += '<li>Kudos to ' + i + ' for ' + x
             toReplaceWith = '<ul>' + kudos + '</ul>'
             temp = temp.replace('KUDOS', toReplaceWith)
+            toAddRight += temp
         
         print toAddLeft
-        print '</div></div><div class="col-9"><div class="tab-content" id="v-pills-tabContent">'
+        print '\n\n\n</div></div><div class="col-9"><div class="tab-content" id="v-pills-tabContent">'
         print toAddRight
         print '</div></div></div></div>'
                 
