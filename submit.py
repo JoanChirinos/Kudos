@@ -28,6 +28,11 @@ def go():
         kl = t.split('\n')
         for i in range(len(kl)):
             kl[i] = kl[i].split(',')
+        while kl[0] == [""]:
+            kl = kl[1:]
+            
+        while kl[-1] = [""]:
+            kl = kl[:-1]
             
         print kl
 #        
