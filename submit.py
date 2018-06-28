@@ -47,7 +47,7 @@ def go():
             else:
                 d[i[0]] = [i[1]]
         
-        print '<div class="row"><div class="col-3"><div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">'
+        print '<div class="row"><div class="col-sm-4"><div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">'
         
         leftACTIVE = '<a class="nav-link active" id="v-pills-NAME-tab" data-toggle="pill" href="#v-pills-NAME" role="tab" aria-controls="v-pills-NAME" aria-selected="true">NAME</a>'
         rightACTIVE = '<div class="tab-pane fade show active" id="v-pills-NAME" role="tabpanel" aria-labelledby="v-pills-NAME-tab">KUDOS</div>'
@@ -76,9 +76,9 @@ def go():
             toAddRight += temp
         
         print toAddLeft
-        print '\n\n\n</div></div><div class="col-9"><div class="tab-content" id="v-pills-tabContent">'
+        print '\n\n\n</div></div><div class="col-sm-8"><div class="tab-content" id="v-pills-tabContent">'
         print toAddRight
-        print '</div></div></div></div>'
+        print '\n\n\n</div></div></div></div>'
                 
     
 go()
