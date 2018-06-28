@@ -79,9 +79,7 @@ def go():
         print '\n\n\n</div></div><div class="col-sm-8"><div class="tab-content" id="v-pills-tabContent">'
         print toAddRight
         print '\n\n\n</div></div></div></div>'
-        for i in range(100):
-            print '<br>'
-        print '\n\n<!-- this should only show on small screens -->\n\n<div class="row"><div class"col hidden-lg hidden-md visible-sm"><a href="#" class="btn btn-block btn-info">Back to top</a></div></div>'
+        print '\n\n<!-- this should only show on small screens -->\n\n<div class="row"><div class"col d-block d-sm-block d-md-none d-lg-none d-xl-non"><a href="#" class="btn btn-block btn-info">Back to top</a></div></div>'
                 
     
 go()
