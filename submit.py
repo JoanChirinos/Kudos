@@ -25,11 +25,11 @@ def go():
         t = f.read()
         f.close()
         
-        print t
-        
-#        kl = t.split('\n')
-#        for i in range(len(kl)):
-#            kl[i] = kl[i].split(',')
+        kl = t.split('\n')
+        for i in range(len(kl)):
+            kl[i] = kl[i].split(',')
+            
+        print kl
 #        
 #        d = dict()
 #        
