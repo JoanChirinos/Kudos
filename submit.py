@@ -51,7 +51,7 @@ def go():
         toAddRight = ""
         
         for i in d.keys():
-            print "<!-- " + i + "  |  " + d[i] + " -->"
+            print "<!-- " + str(i) + "  |  " + str(d[i]) + " -->"
             toAddLeft += "\n\n" + left.replace('NAME', i)
             temp = toAddRight.replace('NAME', i)
             kudos = ""
