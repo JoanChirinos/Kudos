@@ -62,17 +62,17 @@ def go():
         for i in sorted(d.keys()):
             print "\n\n<!-- " + str(i) + "  |  " + str(d[i]) + " -->"
             if not hasAddedOne:
-                toAddLeft += "\n" + leftACTIVE.replace('NAME', i)
-                temp = rightACTIVE.replace('NAME', i)
+                toAddLeft += "\n" + leftACTIVE.replace('NAME', i.strip())
+                temp = rightACTIVE.replace('NAME', i.strip())
                 hasAddedOne = True
             else:
-                toAddLeft += "\n" + left.replace('NAME', i)
-                temp = right.replace('NAME', i)
+                toAddLeft += "\n" + left.replace('NAME', i.strip())
+                temp = right.replace('NAME', i.strip())
             kudos = ""
             for x in d[i]:
                 if x.split(' ')[0].lower() == 'for':
                     x = ' '.join(x.split(' ')[1:])
-                kudos += '<li>Kudos to ' + i + ' for ' + x + '</li>'
+                kudos += '<li>Kudos to ' + i.strip() + ' for ' + x.strip() + '</li>'
             toReplaceWith = '<ul>' + kudos + '</ul>'
             temp = temp.replace('KUDOS', toReplaceWith)
             toAddRight += temp
