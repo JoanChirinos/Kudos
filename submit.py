@@ -1,6 +1,6 @@
 #! /usr/bin/python
 
-import cgi, cgitb
+import cgi, cgitb, time
 
 cgitb.enable()
 
@@ -18,7 +18,7 @@ def go():
 
         x = open('kudos.txt', 'w+')
         x.write(t.strip(' ') + '\n' + toWho.strip(' ').capitalize() + ',' + forWhy.strip(' ').lower())
-        x.close()
+        x.close() + time.strftime('%B %d, %Y @ %I:%M %p')
         print t.strip(' ') + '\n' + toWho.strip(' ').capitalize() + ',' + forWhy.lower()
     else:
         f = open('kudos.txt', 'rU')
