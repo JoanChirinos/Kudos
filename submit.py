@@ -17,9 +17,9 @@ def go():
         f.close()
 
         x = open('kudos.txt', 'w+')
-        x.write(t.strip(' ') + '\n' + toWho.strip(' ').capitalize() + ',' + forWhy.strip(' ').lower() + time.strftime('%B %d, %Y @ %I:%M %p'))
+        x.write(t.strip(' ') + '\n' + toWho.strip(' ').capitalize() + ',' + forWhy.strip(' ').lower() + time.strftime('%B %d %Y @ %I:%M %p'))
         x.close()
-        print t.strip(' ') + '\n' + toWho.strip(' ').capitalize() + ',' + forWhy.lower() + time.strftime('%B %d, %Y @ %I:%M %p')
+        print t.strip(' ') + '\n' + toWho.strip(' ').capitalize() + ',' + forWhy.lower() + ' ' + time.strftime('%B %d %Y @ %I:%M %p')
     else:
         f = open('kudos.txt', 'rU')
         t = f.read()
