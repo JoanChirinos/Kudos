@@ -43,9 +43,15 @@ def go():
         
         for i in kl:
             if i[0].capitalize() in d:
-                d[i[0].capitalize()] += [i[1]]
+                try:
+                    d[i[0].capitalize()] += [i[1]]
+                except:
+                    continue
             else:
-                d[i[0].capitalize()] = [i[1]]
+                try:
+                    d[i[0].capitalize()] = [i[1]]
+                except:
+                    continue
         
         print '<div class="row"><div class="col-sm-4"><div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">'
         
