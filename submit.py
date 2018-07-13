@@ -84,7 +84,7 @@ def go():
         print '\n<div class="md-space"></div>'
         print '\n\n<!-- this should only show on small screens -->\n\n<div class="row"><div class="col d-sm-block d-md-none d-lg-none d-xl-non"><a href="#" class="btn btn-block btn-info">Back to top</a></div></div>'
         
-        print '<ul>\n'
+        print '<br><br><p>Umm this hasn\'t been working very well lately so here\'s all of them without sorting and stuff sorry!</p><ul>\n'
         for i in sorted(d.keys()):
             for x in d[i]:
                 print '<li>Kudos to ' + i.strip(' ') + ' for ' + x.strip(' ') + '</li>'
