@@ -73,8 +73,8 @@ def go():
                 temp = rightACTIVE.replace('NAME', i.strip(' ').replace(' ', '_'))
                 hasAddedOne = True
             else:
-                toAddLeft += "\n" + left.replace('NAME', i.strip(' ').replace(' ', '_'))
-                temp = right.replace('NAME', i.strip(' ').replace(' ', '_')).replace('SANS_FORMAT', i.split())
+                toAddLeft += "\n" + left.replace('NAME', i.strip(' ').replace(' ', '_')).replace('SANS_FORMAT', i.split())
+                temp = right.replace('NAME', i.strip(' ').replace(' ', '_'))
             kudos = ""
             for x in d[i]:
                 if x.split(' ')[0].lower() == 'for':
