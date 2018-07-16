@@ -68,12 +68,12 @@ def go():
         for i in sorted(d.keys()):
             print "\n\n<!-- " + str(i) + "  |  " + str(d[i]) + " -->"
             if not hasAddedOne:
-                toAddLeft += "\n" + leftACTIVE.replace('NAME', i.strip(' '))
-                temp = rightACTIVE.replace('NAME', i.strip(' '))
+                toAddLeft += "\n" + leftACTIVE.replace('NAME', i.strip(' ').replace(' ', '_'))
+                temp = rightACTIVE.replace('NAME', i.strip(' ').replace(' ', '_'))
                 hasAddedOne = True
             else:
-                toAddLeft += "\n" + left.replace('NAME', i.strip(' '))
-                temp = right.replace('NAME', i.strip(' '))
+                toAddLeft += "\n" + left.replace('NAME', i.strip(' ').replace(' ', '_'))
+                temp = right.replace('NAME', i.strip(' ').replace(' ', '_'))
             kudos = ""
             for x in d[i]:
                 if x.split(' ')[0].lower() == 'for':
