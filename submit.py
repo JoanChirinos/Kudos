@@ -56,7 +56,7 @@ def go():
         
         print '<div class="row"><div class="col-sm-4"><div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">'
         
-        leftACTIVE = '<a class="nav-link active" id="v-pills-NAME-tab" data-toggle="pill" href="#v-pills-NAME" role="tab" aria-controls="v-pills-NAME" aria-selected="true">NAME_SANS_FORMAT</a>'
+        leftACTIVE = '<a class="nav-link active" id="v-pills-NAME-tab" data-toggle="pill" href="#v-pills-NAME" role="tab" aria-controls="v-pills-NAME" aria-selected="true">SANS_FORMAT</a>'
         rightACTIVE = '<div class="tab-pane fade show active" id="v-pills-NAME" role="tabpanel" aria-labelledby="v-pills-NAME-tab">KUDOS</div>'
         left = '<a class="nav-link" id="v-pills-NAME-tab" data-toggle="pill" href="#v-pills-NAME" role="tab" aria-controls="v-pills-NAME" aria-selected="true">SANS_FORMAT</a>'
         right = '<div class="tab-pane fade" id="v-pills-NAME" role="tabpanel" aria-labelledby="v-pills-NAME-tab">KUDOS</div>'
@@ -74,7 +74,7 @@ def go():
                 hasAddedOne = True
             else:
                 toAddLeft += "\n" + left.replace('NAME', i.strip(' ').replace(' ', '_'))
-                temp = right.replace('NAME', i.strip(' ').replace(' ', '_'))
+                temp = right.replace('NAME', i.strip(' ').replace(' ', '_')).replace('SANS_FORMAT', i.split())
             kudos = ""
             for x in d[i]:
                 if x.split(' ')[0].lower() == 'for':
