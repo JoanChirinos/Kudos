@@ -78,7 +78,7 @@ def go():
             for x in d[i]:
                 if x.split(' ')[0].lower() == 'for':
                     x = ' '.join(x.split(' ')[1:])
-                kudos += '<li>Kudos to ' + i.strip(' ') + ' for ' + x.strip(' ') + '</li>'
+                kudos += '<li>Kudos to ' + i.strip(' ').replace('_', ' ') + ' for ' + x.strip(' ') + '</li>'
             toReplaceWith = '<ul>' + kudos + '</ul>'
             temp = temp.replace('KUDOS', toReplaceWith)
             toAddRight += temp
