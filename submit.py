@@ -20,7 +20,8 @@ def go():
         toWrite = (t.strip(' ') + '\n' + toWho.strip(' ').capitalize() + 'SPLITHERE' + forWhy.strip(' ').lower() + ' <span style="color: rgb(150, 150, 150);">' + time.strftime('%B %d %Y @ %I:%M %p') + "</span>").replace(',', ' ').replace('&', 'and')
         x.write(toWrite)
         x.close()
-        print t.strip(' ') + '\n' + toWho.strip(' ').capitalize() + 'SPLITHERE' + forWhy.lower() + ' ' + time.strftime('%B %d %Y @ %I:%M %p')
+        print toWrite
+        
     else:
         f = open('kudos.txt', 'rU')
         t = f.read()
